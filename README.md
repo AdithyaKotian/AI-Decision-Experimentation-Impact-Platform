@@ -21,6 +21,7 @@ Choosing between these strategies is a product decision. This platform is design
 ## System Architecture
 
 Transaction Data
+
 ↓
 
 ML Risk Scoring Model
