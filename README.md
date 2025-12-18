@@ -131,5 +131,5 @@ This policy provides the best trade-off between fraud prevention, user experienc
 
 ---
 
-## Why This Project Stands Out
-This is not a typical ML demo. It demonstrates product-oriented ML thinking by combining experimentation, KPI analysis, and cost-aware decision-making. The platform reflects how AI-driven decisions are designed and evaluated in real production systems.
+## Why This Project 
+It demonstrates product-oriented ML thinking by combining experimentation, KPI analysis, and cost-aware decision-making. The platform reflects how AI-driven decisions are designed and evaluated in real production systems.
