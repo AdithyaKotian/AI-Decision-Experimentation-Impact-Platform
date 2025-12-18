@@ -1,0 +1,4 @@
+policy,fraud_missed,legit_blocked,reviews,total_cost_inr
+policy_A,146,38,0,768000
+policy_B,83,26,153,471600
+policy_C,63,61,116,399200
