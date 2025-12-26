@@ -4,20 +4,21 @@ https://ai-decision-experimentation-impact-platform-fgubk3wtu9qfh9zpu7.streamlit
 # AI Decision Experimentation & Impact Platform
 
 ## Product Problem
-In real-world products, AI models do not make final decisions. They generate signals that product teams convert into actions such as approve, review, or block. The core challenge is not model accuracy, but selecting the decision strategy that best balances user experience, risk, operational effort, and business cost.
+In real world products,AI models do not make a final decisions.They generate signals that a product teams translate into actions such as approve,review or block.The real challenge is not to achieving higher model accuracy,but choosing a decision strategy that balances user experience,risk,operational effort and overall business cost.
 
-This project addresses a practical product question:
-Which AI-driven decision policy should a product deploy to maximize business impact?
+This project explores a practical product question:
+Which AI driven decision policy should a product deploy to minimize the business loss?
 
 ---
 
 ## Why a Single ML Model Is Not Enough
-An ML model outputs a risk score, not a decision. Different product strategies can use the same score in different ways:
-- Aggressive strategies favor growth but accept higher risk
-- Conservative strategies reduce risk but increase user friction and operational cost
-- Balanced strategies aim to optimize trade-offs
-
-Choosing between these strategies is a product decision. This platform is designed to experiment with multiple policies and recommend the most effective one.
+An ML model produces a risk score,not a decision.The same score can lead to very a different outcomes depending on how it is used:
+- Aggressive strategies prioritize growth but accept higher risk.
+- Conservative strategies reduce the risk but increase friction and the operational cost.
+- Balanced strategies aim to optimize trade offs.
+  
+Selecting among these strategies is a product decision,not a modeling decision.
+This platform evaluates a multiple decision policies and recommends the most effective one based on business impact.
 
 ---
 
@@ -47,7 +48,7 @@ Policy Recommendation
 
 
 
-The ML model acts strictly as a signal generator. All business logic and trade-offs are handled at the policy layer.
+The ML model acts strictly as a signal generator. All business logic and trade offs are handled at the policy layer.
 
 ---
 
@@ -58,7 +59,7 @@ Each transaction contains:
 - Transaction velocity
 - Location mismatch indicator
 
-A simple ML model generates a continuous risk_score between 0 and 1. The model is intentionally imperfect and not optimized for accuracy, reflecting how ML signals are used in production systems.
+A simple ML model generates a continuous risk_score between 0 and 1.The model is intentionally imperfect and not a optimized for accuracy, reflecting how ML signals are used in production systems.
 
 ---
 
@@ -71,26 +72,25 @@ Three decision policies were implemented using the same ML risk score:
 - Accepts higher fraud risk
 
 **Policy B – Balanced Strategy**
-- Balanced approvals, reviews, and blocks
+- Balanced approvals, reviews and blocks
 - Typical of mature production systems
 
 **Policy C – Conservative Safety**
 - Minimizes fraud risk
 - Higher friction and operational cost
 
-Each policy represents a different product strategy, not a different ML model.
+Each policy represents a different product strategy,not a different ML model.
 
 ---
 
 ## Experiment Design
-All policies are evaluated on the same transaction dataset using offline experimentation. For each policy, the following KPIs are measured:
+All policies are evaluated on the same transaction dataset using offline experimentation.For each policy,the following KPIs are measured:
 - Approval rate (user experience)
 - Review rate (operational friction)
 - Fraud caught
 - Fraud missed
 
-This simulates real-world A/B testing before deploying a policy to production.
-
+This mirrors how the decision strategies are evaluated before production deployment.
 ---
 
 ## Business Impact and Cost Modeling
@@ -108,31 +108,30 @@ This allows policies to be compared using business outcomes rather than ML metri
 
 ## Final Recommendation
 After evaluating all policies:
-- The aggressive policy led to high fraud losses
-- The conservative policy reduced fraud but increased friction and operational cost
-- The balanced policy achieved the lowest overall business cost
+- The aggressive policy led to high fraud losses.
+- The balanced policy reduced losses but still missed significant fraud.
+- The conservative policy minimized fraud misses at the cost of higher friction.
+  
+**Recommended Policy: Policy C (Conservative Safety)**
 
-**Recommended Policy: Policy B (Balanced)**
-
-This policy provides the best trade-off between fraud prevention, user experience, and operational efficiency.
-
+This policy minimizes the overall business loss by prioritizing fraud prevention,even at the expense of user friction and operational cost.
 ---
 
 ## Key Takeaways
-- ML models should be treated as signals, not decision-makers
-- Product impact depends on decision strategy, not just model accuracy
-- Offline experimentation is critical before deployment
-- The optimal policy minimizes business loss, not prediction error
+- ML models should be treated as signals,not decision makers.
+- Product impact depends on decision strategy,not just model accuracy.
+- Offline experimentation is critical before deployment.
+- The optimal policy minimizes business loss,not prediction error.
 
 ---
 
 ## Limitations and Future Work
-- Cost assumptions can be tuned for different businesses
-- Experiments are offline and can be extended to live A/B testing
-- Additional policies can be easily added
-- Can be extended with drift monitoring and human feedback loops
+- Cost assumptions can be tuned for different businesses.
+- Experiments are offline and can be extended to live A/B testing.
+- Additional policies can be easily added.
+- Can be extended with drift monitoring and human feedback loops.
 
 ---
 
 ## Why This Project 
-It demonstrates product-oriented ML thinking by combining experimentation, KPI analysis, and cost-aware decision-making. The platform reflects how AI-driven decisions are designed and evaluated in real production systems.
+This project demonstrates product oriented ML thinking by combining decision experimentation,KPI analysis and cost aware evaluation.It reflects how AI driven decisions are designed,tested and validated in real production systems.
