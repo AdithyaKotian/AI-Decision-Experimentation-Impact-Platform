@@ -1,4 +1,4 @@
 policy,approval_rate,review_rate,fraud_caught,fraud_missed
-policy_A,0.606,0.0,553,146
-policy_B,0.529,0.102,527,83
-policy_C,0.492,0.077,585,63
+policy_A,0.606,0.112,423,146
+policy_B,0.529,0.125,502,83
+policy_C,0.453,0.153,553,50
